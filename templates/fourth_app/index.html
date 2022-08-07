@@ -1,0 +1,18 @@
+{% extends "fourth_app/base.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <h2 class="display-4">Welcome to the fourth app of this website!</h2>
+    <p class="lead">This app shows a demonstration of registration and login forms with changes and hashed passwords committed to the database</p>
+    <hr class="my-4">
+    <p>In case you are a new user to this website then click on the button below to register.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'fourth_app:register' %}" role="button">Register</a>
+    </p>
+    <p>In case you have already registered, click on the button below to login. </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'fourth_app:user_login' %}" role="button">Log In</a>
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First App Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'first_app/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Welcome to the first app of this website!</h1>
+        <p class="lead">This app displays the records from the database and a image of Django from static files using template tagging in Django</p>
+        <hr class="my-4">
+        Enjoy your experience. 
+      </div>
+    </div>
+    <br><br>
+    
+    <div class="container">
+      <h3>Here are the records populated in the models connected to this html page</h3>
+      {% if access_records %}
+      <table>
+          <thead>
+              <th>Site Name</th>
+              <th>Date accessed</th>
+          </thead>
+          {% for acc in access_records %}
+          <tr>
+              <td>{{acc.name}}</td>
+              <td>{{acc.date}}</td>
+          </tr>
+          {% endfor %}
+       </table>
+       {% else %}
+       <div>
+          NO RECORDS TO DISPLAY
+       </div>
+       {% endif %}
+  </div>
+  <div class="container">
+    <h3>Below is a picture of django himself!</h2>
+    <img src="{% static 'first_app/images/django_guitar.jpeg' %}" alt="Could not fetch django_guitar.jpeg">
+
+  </div>
+</body>
+</html>

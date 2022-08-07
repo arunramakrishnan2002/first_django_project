@@ -1,0 +1,14 @@
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+h3{
+    color: red;
+}
+
+table, th, td {
+    border: 2px solid black;
+    
+  }
+
